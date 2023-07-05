@@ -1,4 +1,100 @@
-body
-{
-    background-color: aquamarine;
+body {
+    background-color: rgb(250, 250, 250);
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root {
+    --text-color: rgb(255, 255, 255);
+    --text-color2: rgb(0, 0, 0);
+    --text-color3: rgb(208, 208, 208);
+}
+
+#start_box {
+    width: 100%;
+    height: 30%;
+    background-image: url('../images/back4.jpeg');
+    background-size: cover;
+    padding: 2%;
+    border: 3px solid black;
+}
+
+.drp,
+.drp:focus,
+.drp:active {
+    background: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.drpbtn {
+    width: 100%;
+    border-radius: 0%;
+    height: 30%;
+}
+
+#name {
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    border: none;
+}
+
+.mtask {
+    width: 100%;
+    background-color: var(--text-color3);
+    color: var(--text-color2);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0%;
+    text-align: center;
+}
+
+.mtask::placeholder {
+    color: var(--text-color2);
+}
+
+.mtype {
+    width: 20%;
+    background-color: var(--text-color3);
+    appearance: none;
+    border: 2px solid rgb(0, 0, 0);
+    color: var(--text-color2);
+    text-align: center;
+}
+
+.mtype:focus {
+    color: var(--text-color);
+}
+
+/* input {
+    color-scheme: dark;
+} */
+
+.mdate {
+    width: 30%;
+    color: var(--text-color2);
+    background-color: var(--text-color3);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.mtime {
+    width: 20%;
+    background-color: var(--text-color3);
+    text-align: center;
+    color: var(--text-color2);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.msubmit {
+    background-color: greenyellow;
+    color: var(--text-color2);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#cbtn {
+    background-color: rgb(199, 196, 196);
 }

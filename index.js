@@ -6,6 +6,7 @@ const port = 8000;
 
 const db = require('./config/mongoose');
 const ToDoList = require('./models/todolist');
+const TodoList = require('./models/todolist');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -32,7 +33,8 @@ app.post('/create_task', function (req, res) {
       task: req.body.task,
       type: req.body.type,
       date: req.body.date,
-      time: req.body.time
+      time: req.body.time,
+      clicked: false
     }
   ).then((newtask) => {
     return res.redirect('back');
@@ -55,6 +57,21 @@ app.get('/del/', async function (req, res) {
   }
 });
 
+app.get('/clicked/', async function (req, res) {
+  try {
+    let id = req.query.id;
+    const task = await TodoList.findById(id);
+
+    if (task) {
+      task.clicked = !task.clicked; // Toggle the clicked property
+      await task.save();
+    }
+    return res.redirect('back');
+  } catch (err) {  // Add the `err` parameter here
+    console.log('Error in Clicking the Task ', err);
+    return res.redirect('back');
+  }
+});
 app.listen(port, function (err) {
   if (err) {
     console.log('Error in Connecting Server', err);

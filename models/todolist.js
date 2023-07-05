@@ -16,6 +16,11 @@ const lschema = new mongoose.Schema({
     time: {
         type: String,
         required: true
+    },
+    clicked:
+    {
+        type: Boolean,
+        required: true
     }
 });
 

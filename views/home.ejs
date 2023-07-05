@@ -13,26 +13,43 @@
 </head>
 
 <body>
-    <h1>Hi Home Connected to EJS</h1>
-
-    <form action="/create_task" method="post">
-        <input type="text" placeholder="Enter Task" name="task" required>
-        <select name="type" class="form-select form-select-sm" aria-label=".form-select-sm example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+    <div id="start_box">
+        <div class="drpbtn btn-group">
+            <button type="button" class="drp dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-list fa-xl" style="color: #ffffff;"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/">Home</a></li>
+                <li><a class="dropdown-item" href="/money">Money Management</a></li>
+            </ul>
+        </div>
+        <div id="name">
+            <div>
+                <h1>Welcome Akshay</h1>
+            </div>
+        </div>
+        <dib id="dtime"></dib>
+    </div>
+    <form class="cform" action="/create_task" method="post">
+        <input class="mtask" type="text" placeholder="Enter Task" name="task" required>
+        <select name="type" class="mtype">
+            <option selected value="Others">Type</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="House">House</option>
+            <option value="Others">Others</option>
         </select>
-        <input type="date" placeholder="Enter Date" name="date" required>
-        <input type="time" placeholder="Enter Time" name="time" required>
-        <button type="submit">Submit task</button>
+        <input id="mdate"class="mdate" type="date" placeholder="Enter Date" name="date" required >
+        <input class="mtime" type="time" placeholder="Enter Time" name="time" required>
+        <button class="msubmit" type="submit">Submit task</button>
     </form>
     <ul>
         <% for(let t of todolist) {%>
 
-            <li>
+            <li id="<%t.id%>" class="<%= t.clicked ? "click" : "not" %>" >
                 <%=t.task%>,&nbsp;<%=t.type%>,&nbsp;<%=t.date%>,&nbsp;<%=t.time%>
-                <a href="/del/?id=<%=t.id%>"><i class="fa-solid fa-rectangle-list"></i></a>
+        <a href="/del/?id=<%=t.id%>"><i class="fa-solid fa-delete-left" style="color: #b30000;"></i></a>
+        <a  href="/clicked/?id=<%=t.id%>"class="cbtn"><i class="fa-solid fa-check-to-slot" style="color: #3101df;"></i></a>
             </li>
 
             <%}%>
