@@ -6,6 +6,11 @@ app.listen(port,function(err)
 {
   if(err)
   {
-    console
+    console.log('Error in Connecting Server',err);
+    return;
+  }
+  else
+  {
+    console.log('Server is Up and Running on Port : ',port);
   }
 });
