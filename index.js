@@ -1,4 +1,5 @@
 const express = require('express');
+const { type } = require('os');
 const path = require('path');
 const { dirname } = require('path');
 const port = 8000;
@@ -12,26 +13,26 @@ var todolist = [
   {
     task: "Complete HomeWork",
     type: "School",
-    date: "12/08/2001",
-    time: "12 Am"
+    date: "2023-07-04",
+    time: "12:20"
   },
   {
     task: "Complete HomeWork",
     type: "School",
-    date: "12/08/2001",
-    time: "12 Am"
+    date: "2023-07-04",
+    time: "12:20"
   },
   {
     task: "Complete HomeWork",
     type: "School",
-    date: "12/08/2001",
-    time: "12 Am"
+    date: "2023-07-04",
+    time: "12:20"
   },
   {
     task: "Complete HomeWork",
     type: "School",
-    date: "12/08/2001",
-    time: "12 Am"
+    date: "2023-07-04",
+    time: "12:20"
   }
 ];
 
@@ -43,9 +44,16 @@ app.get('/money', function (req, res) {
   res.render('money', { title: "Manage Money" });
 });
 
-app.post('/create_task',function(req,res)
-{
-   console.log(req.body)
+app.post('/create_task', function (req, res) {
+  todolist.push(
+    {
+      task: req.body.task,
+      type: req.body.type,
+      date: req.body.date,
+      time: req.body.time
+    }
+  );
+  return res.redirect('back');
 });
 
 app.listen(port, function (err) {
