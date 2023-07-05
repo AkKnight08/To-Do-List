@@ -8,14 +8,23 @@
 
 <body>
     <h1>Hi Home Connected to EJS</h1>
-    <u;>
-        <% for(let i=0;i<6;i++) {%>
 
-    <li>
-        <%=i%>
-    </li>
-        <%}%>
-    </u>
+    <form action="/create_task" method="post">
+        <input type="text" placeholder="Enter Task" name="task" required>
+        <input type="text" placeholder="Enter Type" name="type" required>
+        <input type="date" placeholder="Enter Date" name="date" required>
+        <input type="time" placeholder="Enter Time" name="time" required>
+        <button type="submit">Submit task</button>
+    </form>
+    <ul>
+        <% for(let t of todolist) {%>
+
+            <li>
+                <%=t.task%>,&nbsp;<%=t.type%>,&nbsp;<%=t.date%>,&nbsp;<%=t.time%>
+            </li>
+
+            <%}%>
+    </ul>
 </body>
 
 </html>
