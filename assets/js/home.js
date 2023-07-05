@@ -1,1 +1,1 @@
-console.log('home js Connected')
+console.log('home js Connected');

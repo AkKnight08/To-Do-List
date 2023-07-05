@@ -57,6 +57,9 @@ app.post('/create_task', function (req, res) {
   return res.redirect('back');
 });
 
+app.get('/del/', function (req, res) {
+});
+
 app.listen(port, function (err) {
   if (err) {
     console.log('Error in Connecting Server', err);
