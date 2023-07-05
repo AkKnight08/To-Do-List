@@ -9,12 +9,12 @@ app.set('views',path.join(__dirname,'views'));
 
 app.get('/',function(req,res)
 {
-   res.render('home');
+   res.render('home',{title:"To Do List"});
 });
 
 app.get('/money',function(req,res)
 {
-  res.render('money');
+  res.render('money',{title:"Manage Money"});
 });
 
 app.listen(port,function(err)
