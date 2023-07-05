@@ -12,17 +12,14 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded());
 app.use(express.static('assets'));
-var todolist=[
-{
-  type:"Afdf",
-  task:"afsf",
-  date:"dff",
-  time:"asfafd"
-}
-];
 
 app.get('/', function (req, res) {
-  res.render('home', { title: "To Do List", todolist: todolist });
+
+  ToDoList.find({}).then((list) => {
+    res.render('home', { title: "To Do List", todolist: list });
+  }).catch((err) => {
+    console.log('Error in Fetching To Do List From DB :', err);
+  });
 });
 
 app.get('/money', function (req, res) {
@@ -30,18 +27,32 @@ app.get('/money', function (req, res) {
 });
 
 app.post('/create_task', function (req, res) {
-  todolist.push(
+  ToDoList.create(
     {
       task: req.body.task,
       type: req.body.type,
       date: req.body.date,
       time: req.body.time
     }
-  );
-  return res.redirect('back');
+  ).then((newtask) => {
+    return res.redirect('back');
+  }).catch((err) => {
+    console.log('Error in Creating the Task ', err);
+    return res.redirect('back');
+  });
 });
 
-app.get('/del/', function (req, res) {
+app.get('/del/', async function (req, res) {
+  try {
+    let id = req.query.id;
+    await ToDoList.findByIdAndDelete(id);
+    return res.redirect('back');
+  }
+  catch
+  {
+    console.log('Error in Deleting the Task ', err);
+    return res.redirect('back');
+  }
 });
 
 app.listen(port, function (err) {
