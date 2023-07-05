@@ -4,37 +4,21 @@ const path = require('path');
 const { dirname } = require('path');
 const port = 8000;
 
+const db = require('./config/mongoose');
+const ToDoList = require('./models/todolist');
+
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded());
 app.use(express.static('assets'));
-
-var todolist = [
-  {
-    task: "Complete HomeWork",
-    type: "School",
-    date: "2023-07-04",
-    time: "12:20"
-  },
-  {
-    task: "Complete HomeWork",
-    type: "School",
-    date: "2023-07-04",
-    time: "12:20"
-  },
-  {
-    task: "Complete HomeWork",
-    type: "School",
-    date: "2023-07-04",
-    time: "12:20"
-  },
-  {
-    task: "Complete HomeWork",
-    type: "School",
-    date: "2023-07-04",
-    time: "12:20"
-  }
+var todolist=[
+{
+  type:"Afdf",
+  task:"afsf",
+  date:"dff",
+  time:"asfafd"
+}
 ];
 
 app.get('/', function (req, res) {
