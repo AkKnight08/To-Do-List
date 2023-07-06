@@ -13,7 +13,7 @@ body {
 #tdbox {
     width: 35%;
     height: 99%;
-    min-width: 500px;
+    min-width: 400px;
     background-color: rgb(255, 230, 255);
     border: 1.5px solid rgb(0, 0, 0);
     border: none;
