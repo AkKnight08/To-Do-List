@@ -26,7 +26,7 @@
             </div>
             <div id="name">
                 <div>
-                    <h1>Welcome Akshay</h1>
+                    <h1>Welcome Home</h1>
                 </div>
             </div>
             <dib id="dtime"></dib>
@@ -58,7 +58,8 @@
         <ul id="handleul">
             <% for(let t of todolist) {%>
 
-                <li id="handleli" class="<%= t.clicked ? " click" : "not" %>" >
+                <li id="handleli" class="<%= t.clicked ? 'click' : 'not' %> <%= t.clicked ? 'com' : 'nc' %>">
+
                     <div id="imgbox" class="<%=t.type%>"></div>
                     <div id="write" class="<%= t.clicked ? " click" : "not" %>" >
                         <%=t.task%>
@@ -72,14 +73,22 @@
                     <div id="writebox3" class="<%= t.clicked ? " click" : "not" %>" >
                         <%=t.time%>
                     </div>
-                    <div id="checkbox">
-                        <a href="/del/?id=<%=t.id%>"><i class="fa-solid fa-trash-can-arrow-up fa-lg" style="color: #dd0000;"></i></a>
-                        <a href="/clicked/?id=<%=t.id%>" class="cbtn"><i class="fa-solid fa-square-check fa-lg" style="color: #00f708;"></i></a>
+                    <div id="checkbox" class="<%= t.clicked ? " click" : "not" %>">
+                        <a href="/del/?id=<%=t.id%>"><i class="fa-solid fa-trash-can-arrow-up fa-lg"
+                                style="color: #002aff;"></i></a>
+                        <a href="/clicked/?id=<%=t.id%>" class="cbtn"><i class="fa-solid fa-square-check fa-lg"></i></a>
                     </div>
                 </li>
 
                 <%}%>
         </ul>
+        <div id="counting">
+            <div id="dtcounter"></div>
+            <div id="counter">
+                <div id="done"></div>
+                <div id="notdone"></div>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

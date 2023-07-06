@@ -6,22 +6,27 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     justify-content: center;
+    background-image: url('../images/back7.jpeg');
+    background-size: cover;
 }
 
 #tdbox {
     width: 35%;
-    height: 100%;
-    background-color: rgb(0, 0, 0);
-    border: 1px solid white;
+    height: 99%;
+    background-color: rgb(255, 230, 255);
+    border: 1.5px solid rgb(0, 0, 0);
+    border: none;
+    background: none;
 }
 
 #start_box {
     width: 100%;
     height: 30%;
-    background-image: url('../images/back5.jpg');
+    background-image: url('../images/back7.jpeg');
     background-size: cover;
     padding: 2%;
     color: white;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .drp:hover {
@@ -55,7 +60,7 @@ body {
 }
 
 #name {
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +73,7 @@ body {
     border-radius: 0%;
     width: 100%;
     border: none;
-    border: 2px solid rgb(0, 2, 145);
+    border: 2px solid #ffffff;
     transition: 0.8s all;
 }
 
@@ -148,14 +153,20 @@ ul {
 
 #handleul {
     list-style-type: none;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(236, 236, 236);
     width: 100%;
-    height: 63%;
-    overflow: scroll;
-    scrollbar-width: none;
+    height: 55%;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
-    color: white;
+    color: rgb(255, 255, 255);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
 }
 
 #handleul::-webkit-scrollbar {
@@ -164,15 +175,18 @@ ul {
 
 #handleli {
     width: 100% !important;
-    height: 3.5rem;
+    min-height: 3.9rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3%;
-    border: 2px solid rgb(0, 0, 0);
+    padding: 0.5%;
+    border: 2px solid rgb(255, 255, 255);
     transition: 0.5s all;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: none;
+    margin: 0.15rem;
+    border-radius: 0.25rem;;
 }
 
 #handleli:hover {
@@ -193,9 +207,10 @@ ul {
     overflow: scroll;
     padding: 2%;
     border-radius: 4%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(28, 20, 51);
     color: rgb(255, 255, 255);
     height: 75%;
+    font-size: 0.8rem !important;
 }
 
 #write::-webkit-scrollbar {
@@ -211,6 +226,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 }
 
 #writebox2 {
@@ -221,8 +237,9 @@ ul {
     width: 13%;
     padding: 2%;
     display: flex;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
+    background: none;
 }
 
 #writebox3 {
@@ -234,6 +251,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 }
 
 #checkbox {
@@ -266,16 +284,57 @@ ul {
 }
 
 .checked {
-    border: 2px solid rgb(255, 255, 255) !important;
-    background-color: rgb(196, 0, 206) !important;
+    border: 2px solid rgb(0, 0, 0) !important;
+    background-color:#9cffa8 !important;
     transition: 0.8s all;
-    color: black;
+    border: none !important;
+    color: rgb(0, 0, 0) !important;
 }
-
-.checked:hover {
-    border: 2px solid rgb(0, 210, 21) !important;
-}
-.Work
+.checked div
 {
-    background-image: url(../images/work.jpeg);
+    color: rgb(0, 0, 0) !important;
+}
+.checked:hover {
+    border: 2px solid rgb(255, 255, 255) !important;
+}
+#write
+{
+    color: white !important;
+}
+.not a i
+{
+    color:#aeffae
+}
+.click a i
+{
+    color:red;
+}
+#counting {
+    width: 100%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color:#aeffae;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 0.3rem;
+}
+#counter
+{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#done
+{
+    color: rgb(204, 255, 129);
+}
+#notdone {
+    color: rgb(255, 54, 18);
+}
+.nc div
+{
+    color: white !important;
 }

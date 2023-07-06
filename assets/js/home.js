@@ -17,14 +17,26 @@ function gettime() {
     dd="0"+dd;
     var date=dd+"-"+mm+"-"+yy;
     document.getElementById("mdate").setAttribute("min", date);
+    date=dd+"-"+mm+"-"+yy;
+    document.getElementById('dtcounter').innerHTML=date;
 }
 setInterval(gettime,1000);
 const btn=document.querySelectorAll('.click');
 btn.forEach((button)=>
-{
+{   
         const liElement = button.closest('li');
         liElement.classList.add('checked');
 })
+let count2=0;
+const btns = document.querySelectorAll('.com');
+count2=btns.length;
+console.log(count2);
+let count=0;
+const bt = document.querySelectorAll('.nc');
+count = bt.length;
+console.log(count);
+document.getElementById('done').innerHTML="C: "+count2;
+document.getElementById('notdone').innerHTML = "R: " + count;
 const trimdate=document.querySelectorAll('#writebox2');
 for(let i of trimdate)
 {
