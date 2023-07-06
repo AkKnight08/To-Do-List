@@ -1,24 +1,44 @@
 body {
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
     color: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
-:root {
-    --text-color: rgb(255, 255, 255);
-    --text-color2: rgb(0, 0, 0);
-    --text-color3: rgb(208, 208, 208);
+#tdbox {
+    width: 35%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid white;
 }
 
 #start_box {
     width: 100%;
     height: 30%;
-    background-image: url('../images/back4.jpeg');
+    background-image: url('../images/back5.jpg');
     background-size: cover;
     padding: 2%;
-    border: 3px solid black;
+    color: white;
+}
+
+.drp:hover {
+    border: 2px solid white !important;
+    transition: 0.8s all;
+}
+
+.drpmenu {
+    color: white;
+    width: auto !important;
+    background-color: black;
+    transition: 0.8s all;
+}
+
+.drpmenu li a {
+    width: auto;
+    color: white;
 }
 
 .drp,
@@ -26,7 +46,6 @@ body {
 .drp:active {
     background: none;
     border: none;
-    color: var(--text-color);
 }
 
 .drpbtn {
@@ -36,7 +55,7 @@ body {
 }
 
 #name {
-    color: var(--text-color);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,57 +63,219 @@ body {
     border: none;
 }
 
-.mtask {
-    width: 100%;
-    background-color: var(--text-color3);
-    color: var(--text-color2);
-    border: 2px solid rgb(0, 0, 0);
+.inputbtn {
+    background-color: rgb(0, 0, 0);
     border-radius: 0%;
+    width: 100%;
+    border: none;
+    border: 2px solid rgb(0, 2, 145);
+    transition: 0.8s all;
+}
+
+.inputbtn:hover {
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: black !important;
+}
+
+.inputbtn:active {
+    border: 2px solid rgb(120, 0, 150) !important;
+    background-color: black !important;
+}
+
+.inputbox {
+    background-color: rgb(0, 0, 0);
+}
+
+.inputbox li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mtask,
+.mtype,
+.mdate,
+.mtime,
+.msubmit {
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(10, 2, 53);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(167, 0, 173);
+    border-radius: 2%;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .mtask::placeholder {
-    color: var(--text-color2);
+    color: rgb(255, 255, 255);
 }
 
 .mtype {
     width: 20%;
-    background-color: var(--text-color3);
-    appearance: none;
-    border: 2px solid rgb(0, 0, 0);
-    color: var(--text-color2);
-    text-align: center;
+    height: 2rem;
 }
 
-.mtype:focus {
-    color: var(--text-color);
+.mtype option {
+    color: white;
 }
 
-/* input {
+input {
     color-scheme: dark;
-} */
+}
 
 .mdate {
-    width: 30%;
-    color: var(--text-color2);
-    background-color: var(--text-color3);
-    border: 2px solid rgb(0, 0, 0);
+    width: 29.5%;
 }
 
 .mtime {
     width: 20%;
-    background-color: var(--text-color3);
-    text-align: center;
-    color: var(--text-color2);
-    border: 2px solid rgb(0, 0, 0);
 }
 
 .msubmit {
     background-color: greenyellow;
-    color: var(--text-color2);
-    border: 2px solid rgb(255, 255, 255);
+    color: black;
+    width: 28%;
 }
 
 #cbtn {
     background-color: rgb(199, 196, 196);
+}
+
+ul {
+    list-style-type: none;
+}
+
+#handleul {
+    list-style-type: none;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 63%;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+#handleul::-webkit-scrollbar {
+    display: none;
+}
+
+#handleli {
+    width: 100% !important;
+    height: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3%;
+    border: 2px solid rgb(0, 0, 0);
+    transition: 0.5s all;
+    background-color: rgb(255, 255, 255);
+}
+
+#handleli:hover {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#imgbox {
+    height: 90%;
+    width: 10%;
+    background-color: aqua;
+    background-image: url('../images/Per.jpg');
+    background-size: cover;
+    border-radius: 4%;
+}
+
+#write {
+    width: 35%;
+    overflow: scroll;
+    padding: 2%;
+    border-radius: 4%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    height: 75%;
+}
+
+#write::-webkit-scrollbar {
+    display: none;
+}
+
+#writebox {
+    width: 13%;
+    border-radius: 6%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#writebox2 {
+    height: 75%;
+    border-radius: 4%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 13%;
+    padding: 2%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+#writebox3 {
+    width: 13%;
+    height: 75%;
+    border-radius: 4%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#checkbox {
+    width: 14%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 75%;
+    align-items: center;
+    border-radius: 6%;
+}
+
+.dtbtn ul {
+    width: 2rem;
+}
+
+.btndt {
+    width: 1rem;
+    background: none;
+    border: none;
+}
+
+.btndt,
+.btndt:focus,
+.btndt:active,
+.btndt:hover {
+    background: none;
+    border: none;
+}
+
+.checked {
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: rgb(196, 0, 206) !important;
+    transition: 0.8s all;
+    color: black;
+}
+
+.checked:hover {
+    border: 2px solid rgb(0, 210, 21) !important;
+}
+.Work
+{
+    background-image: url(../images/work.jpeg);
 }
