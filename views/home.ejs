@@ -17,7 +17,7 @@
         <div id="start_box">
             <div class="drpbtn btn-group">
                 <button type="button" class="drp dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-list fa-xl" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-list fa-xl" style="color: #000000;"></i>
                 </button>
                 <ul class="drpmenu dropdown-menu">
                     <li><a class="dropdown-item" href="/">Home</a></li>
@@ -55,7 +55,7 @@
                 </li>
             </ul>
         </div>
-        <ul id="handleul">
+        <ul id="handleul" class="mylist">
             <% for(let t of todolist) {%>
 
                 <li id="handleli" class="<%= t.clicked ? 'click' : 'not' %> <%= t.clicked ? 'com' : 'nc' %>">

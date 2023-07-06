@@ -4,48 +4,46 @@ function gettime() {
     var now = new Date();
     var hour = now.getHours();
     var min = now.getMinutes();
-    if (hour<=9)
-    hour='0'+hour;
-    if(min<=9)
-    min='0'+min;
+    if (hour <= 9)
+        hour = '0' + hour;
+    if (min <= 9)
+        min = '0' + min;
     var time = hour + ":" + min;
-    document.getElementById('dtime').innerHTML=time;
-    var dd=now.getDay();
-    var yy=now.getFullYear();
-    var mm=now.getMonth();
-    if(dd<9)
-    dd="0"+dd;
-    var date=dd+"-"+mm+"-"+yy;
+    document.getElementById('dtime').innerHTML = time;
+    var dd = now.getDay();
+    var yy = now.getFullYear();
+    var mm = now.getMonth();
+    if (dd < 9)
+        dd = "0" + dd;
+    var date = dd + "-" + mm + "-" + yy;
     document.getElementById("mdate").setAttribute("min", date);
-    date=dd+"-"+mm+"-"+yy;
-    document.getElementById('dtcounter').innerHTML=date;
+    date = dd + "-" + mm + "-" + yy;
+    document.getElementById('dtcounter').innerHTML = date;
 }
-setInterval(gettime,1000);
-const btn=document.querySelectorAll('.click');
-btn.forEach((button)=>
-{   
-        const liElement = button.closest('li');
-        liElement.classList.add('checked');
+setInterval(gettime, 1000);
+const btn = document.querySelectorAll('.click');
+btn.forEach((button) => {
+    const liElement = button.closest('li');
+    liElement.classList.add('checked');
 })
-let count2=0;
+let count2 = 0;
 const btns = document.querySelectorAll('.com');
-count2=btns.length;
+count2 = btns.length;
 console.log(count2);
-let count=0;
+let count = 0;
 const bt = document.querySelectorAll('.nc');
 count = bt.length;
 console.log(count);
-document.getElementById('done').innerHTML="C: "+count2;
+document.getElementById('done').innerHTML = "C: " + count2;
 document.getElementById('notdone').innerHTML = "R: " + count;
-const trimdate=document.querySelectorAll('#writebox2');
-for(let i of trimdate)
-{
-    let s="*"+i.innerHTML+"*";
-     s = s.replace(/\s/g, "");
- s=s.slice(6,11)
- i.innerHTML=s;
+const trimdate = document.querySelectorAll('#writebox2');
+for (let i of trimdate) {
+    let s = "*" + i.innerHTML + "*";
+    s = s.replace(/\s/g, "");
+    s = s.slice(6, 11)
+    i.innerHTML = s;
 }
-const p1= document.querySelectorAll('.Work');
+const p1 = document.querySelectorAll('.Work');
 for (let i of p1) {
     i.style.backgroundImage = "url('../images/work.jpeg')";
 }
@@ -58,3 +56,17 @@ for (let i of p4) {
     i.style.backgroundImage = `url('../images/other.jpeg')`
 }
 
+const myList = document.getElementsByClassName('myList')[0];
+const listItems = Array.from(myList.getElementsByTagName('li'));
+
+// Sort the list items based on class
+listItems.sort(function (a, b) {
+    const classA = a.classList.contains('com');
+    const classB = b.classList.contains('com');
+    return classA - classB || a.classList.contains('nc') - b.classList.contains('nc');
+});
+
+// Update the list with the sorted items
+listItems.forEach(function (item) {
+    myList.appendChild(item);
+});
