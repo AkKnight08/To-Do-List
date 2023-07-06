@@ -342,3 +342,7 @@ ul {
 .nc div {
     color: white !important;
 }
+#write
+{
+text-transform: capitalize;
+}
