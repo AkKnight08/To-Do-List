@@ -289,8 +289,8 @@ ul {
 }
 
 .checked {
-    border: 2px solid hsl(118, 100%, 43%) !important;
-    background-color: hsl(118, 100%, 43%) !important;
+    border: 2px solid hwb(116 24% 58%) !important;
+    background-color: hwb(116 24% 58%) !important;
     transition: 0.8s all;
     color: rgb(247, 247, 247) !important;
 }
