@@ -13,7 +13,7 @@ body {
 #tdbox {
     width: 35%;
     height: 99%;
-    min-width: 400px;
+    min-width: 370px;
     background-color: rgb(255, 230, 255);
     border: 1.5px solid rgb(0, 0, 0);
     border: none;
@@ -27,9 +27,13 @@ body {
     background-size: cover;
     padding: 2%;
     color: white;
+    transition: 0.8s all;
     border: 3px solid rgb(0, 0, 0);
 }
-
+#start_box:hover
+{
+    border: 3px solid rgb(255, 255, 255);
+}
 .drp:hover {
     border: 2px solid white !important;
     transition: 0.8s all;
@@ -74,7 +78,7 @@ body {
     border-radius: 0%;
     width: 100%;
     border: none;
-    border: 2px solid #ffffff;
+    border: 2px solid #77ff87;
     transition: 0.8s all;
 }
 
@@ -168,6 +172,7 @@ ul {
     align-items: center;
     background: none;
     border: none;
+    font-size: 0.9rem !important;
 }
 
 #handleul::-webkit-scrollbar {
@@ -182,13 +187,11 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 0.5%;
-    border: 2px solid rgb(255, 255, 255);
-    transition: 0.5s all;
+    border: 2px solid rgb(0, 0, 0);
+    transition: 0.8s all;
     background-color: rgb(0, 0, 0);
-    border: none;
     margin: 0.15rem;
     border-radius: 0.25rem;
-    ;
 }
 
 #handleli:hover {
@@ -286,15 +289,14 @@ ul {
 }
 
 .checked {
-    border: 2px solid rgb(0, 0, 0) !important;
-    background-color: #9cffa8 !important;
+    border: 2px solid hsl(118, 100%, 43%) !important;
+    background-color: hsl(118, 100%, 43%) !important;
     transition: 0.8s all;
-    border: none !important;
-    color: rgb(0, 0, 0) !important;
+    color: rgb(247, 247, 247) !important;
 }
 
 .checked div {
-    color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .checked:hover {
@@ -319,7 +321,7 @@ ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: #aeffae;
+    color: #3cffb4;
     font-size: 1rem;
     justify-content: space-between;
     padding: 0.3rem;
@@ -327,13 +329,13 @@ ul {
 
 #counter {
     width: 12%;
+    min-width: px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 #done {
-    color: rgb(204, 255, 129);
+    color:#3cffb4;
 }
 
 #notdone {
